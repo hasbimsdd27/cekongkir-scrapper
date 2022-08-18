@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "ddea044f-70d8-4460-a7c8-7c2e331d1845",
+		"name": "cekongkir-scrapper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10201042"
+	},
+	"item": [
+		{
+			"name": "Cari Lokasi",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cekongkir-scrapper.herokuapp.com/search?location=malang",
+					"protocol": "https",
+					"host": [
+						"cekongkir-scrapper",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "malang"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hitung Ongkir",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"courier\": [\n        \"jne\",\n        \"tiki\",\n        \"pos\",\n        \"wahana\",\n        \"sicepat\",\n        \"jnt\"\n    ],\n    \"origin\": 151,\n    \"origin_type\": \"city\",\n    \"destination\": 256,\n    \"destination_type\": \"city\",\n    \"weight\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cekongkir-scrapper.herokuapp.com/cost",
+					"protocol": "https",
+					"host": [
+						"cekongkir-scrapper",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"cost"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
